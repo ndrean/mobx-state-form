@@ -1,6 +1,6 @@
 import React from "react";
 import { observable, action } from "mobx";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import "mobx-react-lite/batchingForReactDom";
 
 const myform = observable({
@@ -38,8 +38,6 @@ const myform = observable({
   },
 });
 
-//const displayName = observer(({children})=> <p>myform.name</p>))
-
 export const FormMobx = observer(() => {
   return (
     <>
@@ -53,11 +51,3 @@ export const FormMobx = observer(() => {
     </>
   );
 });
-
-/*
-const Appv2 = ()=>{
-  return(
-    <p>{isLoading ? renderLoading() : JSON.stringify(response)}</p>
-  )
-}
-*/

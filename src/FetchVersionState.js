@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FormState() {
   const [name, setName] = useState("");
-  const [response, setResponse] = useState();
+  const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
