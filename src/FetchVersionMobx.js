@@ -11,10 +11,10 @@ const url1 = "https://reqres.in/api/users";
 const url2 = "https://jsonplaceholder.typicode.com/users";
 
 const url3 = "https://dummyapi.io/data/api/";
-const APP_ID = "5fe0c731916c890f078f2e85";
+const APP_ID = process.env.REACT_APP_APP_ID; //"5fe0c731916c890f078f2e85";
 
 const url4 = "https://app.fakejson.com/q"; //<- ok for FormData
-const token = "fpd6gFBTdJkRMsH1cZCJRQ"; // <- with FD.append("token",token)
+const token = process.env.REACT_APP_TOKEN; // "fpd6gFBTdJkRMsH1cZCJRQ"; // <- with FD.append("token",token)
 
 export const FormPostMobx = observer(({ store }) => {
   const [isLoading, setIsLoading] = useState(false);
