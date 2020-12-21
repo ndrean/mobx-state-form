@@ -1,19 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { FormMobx } from "./FetchVersionMobx";
-import FormState from "./FetchVersionState";
-import * as serviceWorker from "./serviceWorker";
+import { FormPostMobx, FormGetMobx, FormPostMobxFD } from "./FetchVersionMobx";
+import { FormPostState, FormGetState } from "./FetchVersionState";
+import { myStore } from "./store";
 
+import { configure } from "mobx";
+configure({
+  enforceActions: "always",
+  computedRequiresReaction: true,
+  reactionRequiresObservable: true,
+  observableRequiresReaction: true,
+  disableErrorBoundaries: true,
+});
 ReactDOM.render(
   <React.StrictMode>
-    <FormMobx />
-    <FormState />
+    <FormPostMobx store={myStore} />
+    <FormPostMobxFD store={myStore} />
+    <FormGetMobx store={myStore} />
+
+    <FormPostState />
+    <FormGetState />
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

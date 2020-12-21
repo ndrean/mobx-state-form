@@ -3,3 +3,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <https://test-form-mobx-state.surge.sh>
 
 Testing MOBX vs useState with a form posting data to an api
+
+> Mobx: changing (observed) observable values without using an action is not allowed
